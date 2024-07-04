@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Appointment } from './models/appointment';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   //title = 'appointment-app';
 
-  appointment : string = "Pay Credit Card Bill"
+  //appointment : string = "Pay Credit Card Bill"
+
+  appointment : Appointment ={
+    id : 1,
+    title : "Pay Credit Card bill",
+    date : new Date(),
+  }
 }
