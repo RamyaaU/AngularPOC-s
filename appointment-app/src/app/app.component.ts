@@ -1,19 +1,13 @@
 import { Component } from '@angular/core';
-import { Appointment } from './models/appointment';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  //title = 'appointment-app';
-
-  //appointment : string = "Pay Credit Card Bill"
-
-  appointment : Appointment ={
-    id : 1,
-    title : "Pay Credit Card bill",
-    date : new Date(),
-  }
+  title = 'appointment-app';
 }

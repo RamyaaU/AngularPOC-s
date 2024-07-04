@@ -5,17 +5,7 @@
   "projects": {
     "appointment-app": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -107,8 +97,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "3a3d53b6-c86d-4ed5-af81-431139ed56ab"
   }
 }
