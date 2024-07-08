@@ -32,7 +32,9 @@ export class AppointmentAppComponent {
       this.newAppointmentTitle = " ";
       this.newAppointmentDate = new Date();
 
-      alert(this.appointments.length)
+      //alert(this.appointments.length)
+
+      localStorage.setItem("appointments", JSON.stringify(this.appointments));
     }
   }
 
@@ -41,5 +43,6 @@ export class AppointmentAppComponent {
   {
     //splice is used to remove the first element and replace that with the next set of elements
     this.appointments.splice(index, 1)
+    localStorage.setItem("appointments", JSON.stringify(this.appointments));
   }
 }
