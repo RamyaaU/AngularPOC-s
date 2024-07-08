@@ -35,4 +35,11 @@ export class AppointmentAppComponent {
       alert(this.appointments.length)
     }
   }
+
+  //index : number -->remove the first element in our array that would be index zero
+  deleteAppointment (index: number)
+  {
+    //splice is used to remove the first element and replace that with the next set of elements
+    this.appointments.splice(index, 1)
+  }
 }
