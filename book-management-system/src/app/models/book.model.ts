@@ -1,4 +1,4 @@
-export interface BookModelTs {
+export interface Book {
     id: number
     title: string
     author: string
