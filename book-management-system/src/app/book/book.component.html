@@ -1,3 +1,20 @@
-<p>{{book.id}}</p>
+<!-- One way data binding  -->
+<!-- <p>{{book.id}}</p>
 <p>{{book.title}}</p>
-<p>{{book.author}}</p>
+<p>{{book.author}}</p> -->
+
+<!-- Two way data binding -->
+<form>
+    <div>
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="title" name="title" />
+    </div>
+  
+    <div>
+      <label for="author">Author:</label>
+      <input id="author" [(ngModel)]="author" name="author" />
+    </div>
+  
+    <button type="button" (click)="addBook()">Add Book</button>
+  </form>
+  
