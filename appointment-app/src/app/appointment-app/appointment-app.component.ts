@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Appointment } from '../models/appointment';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './appointment-app.component.html',
   styleUrl: './appointment-app.component.css'
 })
-export class AppointmentAppComponent {
+export class AppointmentAppComponent implements OnInit {
+
+  ngOnInit(): void {
+    let savedAppointments = localStorage.getItem("appointments");
+
+    //this.appointments is either filled with saved data or starts as an empty list if no data is found.
+    this.appointments = savedAppointments ? JSON.parse(savedAppointments) : []
+  }
 
   newAppointmentTitle : string = "";
   newAppointmentDate : Date = new Date();
@@ -33,7 +40,10 @@ export class AppointmentAppComponent {
       this.newAppointmentDate = new Date();
 
       //alert(this.appointments.length)
-
+      //this.appointments - it holds the array 
+      //JSON.stringify(this.appointments) - converts data to JSON string format as localstorage only stores data to string
+      // The appointments data is converted into a JSON string.
+      // This JSON string is then saved in the browser’s local storage under the key "appointments".
       localStorage.setItem("appointments", JSON.stringify(this.appointments));
     }
   }
